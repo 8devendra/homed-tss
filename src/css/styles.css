@@ -1,0 +1,601 @@
+.mediaViewInfo {
+  --web-view-name: Order page;
+  --web-view-id: Order_page;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
+}
+:root {
+  --web-view-ids: Order_page;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+@keyframes fadein {
+
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
+}
+#Order_page {
+  position: absolute;
+  width: 375px;
+  height: 714px;
+  background-color: rgba(255,255,255,1);
+  overflow: hidden;
+  --web-animation: fadein 0.3s ease-out;
+  --web-action-type: page;
+  --web-action-target: Add_New_Work.html;
+  cursor: pointer;
+  --web-view-name: Order page;
+  --web-view-id: Order_page;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
+}
+#Rectangle_2 {
+  fill: rgba(255,255,255,1);
+}
+.Rectangle_2 {
+  position: absolute;
+  overflow: visible;
+  width: 375px;
+  height: 63px;
+  left: 0px;
+  top: 0px;
+}
+#neon-effect-icon-vector-759561 {
+  filter: drop-shadow(0px 3px 50px rgba(0, 221, 255, 0.22));
+  position: absolute;
+  width: 42px;
+  height: 45px;
+  left: 11px;
+  top: 9px;
+  overflow: visible;
+}
+#Homed {
+  left: 55px;
+  top: 23px;
+  position: absolute;
+  overflow: visible;
+  width: 70px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Felix Titling;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: rgba(22,21,60,1);
+}
+#menu_2 {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 334px;
+  top: 16px;
+  overflow: visible;
+}
+#Profile {
+  left: 21px;
+  top: 132px;
+  position: absolute;
+  overflow: visible;
+  width: 63px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  color: rgba(255,255,255,1);
+}
+#Rectangle_30 {
+  fill: rgba(243,248,255,1);
+  stroke: rgba(234,234,234,1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Rectangle_30 {
+  position: absolute;
+  overflow: visible;
+  width: 375px;
+  height: 657px;
+  left: 0px;
+  top: 56px;
+}
+#Orders {
+  left: 150px;
+  top: 73px;
+  position: absolute;
+  overflow: visible;
+  width: 77px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  color: rgba(22,21,60,1);
+}
+#Rectangle_33 {
+  fill: rgba(255,255,255,1);
+  stroke: rgba(234,234,234,1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Rectangle_33 {
+  position: absolute;
+  overflow: visible;
+  width: 342px;
+  height: 41px;
+  left: 17px;
+  top: 126px;
+}
+#Rectangle_32 {
+  fill: rgba(2,0,97,1);
+}
+.Rectangle_32 {
+  position: absolute;
+  overflow: visible;
+  width: 132px;
+  height: 40px;
+  left: 17px;
+  top: 126px;
+}
+#Previous {
+  left: 46px;
+  top: 131px;
+  position: absolute;
+  overflow: visible;
+  width: 78px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(255,255,255,1);
+}
+#Current {
+  left: 168px;
+  top: 131px;
+  position: absolute;
+  overflow: visible;
+  width: 67px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(2,0,97,1);
+}
+#Canceled {
+  left: 257px;
+  top: 131px;
+  position: absolute;
+  overflow: visible;
+  width: 82px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(2,0,97,1);
+}
+#Group_19 {
+  position: absolute;
+  width: 345px;
+  height: 93px;
+  left: 14px;
+  top: 187px;
+  overflow: visible;
+}
+#Rectangle_31 {
+  fill: rgba(255,255,255,1);
+  stroke: rgba(234,234,234,1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Rectangle_31 {
+  position: absolute;
+  overflow: visible;
+  width: 345px;
+  height: 93px;
+  left: 0px;
+  top: 0px;
+}
+#n_0_window_repairing_work_ {
+  left: 135px;
+  top: 33px;
+  position: absolute;
+  overflow: visible;
+  width: 177px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(187,187,187,1);
+}
+#Window_Repairing {
+  left: 135px;
+  top: 9px;
+  position: absolute;
+  overflow: visible;
+  width: 147px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: rgba(22,21,60,1);
+}
+#quality-light--construction-wo {
+  position: absolute;
+  width: 117px;
+  height: 78px;
+  left: 6px;
+  top: 8px;
+  overflow: visible;
+}
+#Nivon_Company_IT_Park_Goa {
+  left: 137px;
+  top: 53px;
+  position: absolute;
+  overflow: visible;
+  width: 167px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgba(160,160,160,1);
+}
+#n_1-05-2021 {
+  left: 135px;
+  top: 72px;
+  position: absolute;
+  overflow: visible;
+  width: 67px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgba(119,119,119,1);
+}
+#Group_20 {
+  position: absolute;
+  width: 345px;
+  height: 93px;
+  left: 15px;
+  top: 293px;
+  overflow: visible;
+}
+#Rectangle_31_ {
+  fill: rgba(255,255,255,1);
+  stroke: rgba(234,234,234,1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Rectangle_31_ {
+  position: absolute;
+  overflow: visible;
+  width: 345px;
+  height: 93px;
+  left: 0px;
+  top: 0px;
+}
+#n_0_window_repairing_work__ {
+  left: 135px;
+  top: 33px;
+  position: absolute;
+  overflow: visible;
+  width: 177px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(187,187,187,1);
+}
+#Window_Repairing_ba {
+  left: 135px;
+  top: 9px;
+  position: absolute;
+  overflow: visible;
+  width: 147px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: rgba(22,21,60,1);
+}
+#quality-light--construction-wo_bb {
+  position: absolute;
+  width: 117px;
+  height: 78px;
+  left: 6px;
+  top: 8px;
+  overflow: visible;
+}
+#Nivon_Company_IT_Park_Goa_bc {
+  left: 137px;
+  top: 53px;
+  position: absolute;
+  overflow: visible;
+  width: 167px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgba(160,160,160,1);
+}
+#n_1-05-2021_bd {
+  left: 135px;
+  top: 72px;
+  position: absolute;
+  overflow: visible;
+  width: 67px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgba(119,119,119,1);
+}
+#Group_21 {
+  position: absolute;
+  width: 345px;
+  height: 93px;
+  left: 15px;
+  top: 399px;
+  overflow: visible;
+}
+#Rectangle_31_bf {
+  fill: rgba(255,255,255,1);
+  stroke: rgba(234,234,234,1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Rectangle_31_bf {
+  position: absolute;
+  overflow: visible;
+  width: 345px;
+  height: 93px;
+  left: 0px;
+  top: 0px;
+}
+#n_0_window_repairing_work__bg {
+  left: 135px;
+  top: 33px;
+  position: absolute;
+  overflow: visible;
+  width: 177px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(187,187,187,1);
+}
+#Window_Repairing_bh {
+  left: 135px;
+  top: 9px;
+  position: absolute;
+  overflow: visible;
+  width: 147px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: rgba(22,21,60,1);
+}
+#quality-light--construction-wo_bi {
+  position: absolute;
+  width: 117px;
+  height: 78px;
+  left: 6px;
+  top: 8px;
+  overflow: visible;
+}
+#Nivon_Company_IT_Park_Goa_bj {
+  left: 137px;
+  top: 53px;
+  position: absolute;
+  overflow: visible;
+  width: 167px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgba(160,160,160,1);
+}
+#n_1-05-2021_bk {
+  left: 135px;
+  top: 72px;
+  position: absolute;
+  overflow: visible;
+  width: 67px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgba(119,119,119,1);
+}
+#Group_22 {
+  position: absolute;
+  width: 345px;
+  height: 93px;
+  left: 15px;
+  top: 505px;
+  overflow: visible;
+}
+#Rectangle_31_bm {
+  fill: rgba(255,255,255,1);
+  stroke: rgba(234,234,234,1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Rectangle_31_bm {
+  position: absolute;
+  overflow: visible;
+  width: 345px;
+  height: 93px;
+  left: 0px;
+  top: 0px;
+}
+#n_0_window_repairing_work__bn {
+  left: 135px;
+  top: 33px;
+  position: absolute;
+  overflow: visible;
+  width: 177px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(187,187,187,1);
+}
+#Window_Repairing_bo {
+  left: 135px;
+  top: 9px;
+  position: absolute;
+  overflow: visible;
+  width: 147px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: rgba(22,21,60,1);
+}
+#quality-light--construction-wo_bp {
+  position: absolute;
+  width: 117px;
+  height: 78px;
+  left: 6px;
+  top: 8px;
+  overflow: visible;
+}
+#Nivon_Company_IT_Park_Goa_bq {
+  left: 137px;
+  top: 53px;
+  position: absolute;
+  overflow: visible;
+  width: 167px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgba(160,160,160,1);
+}
+#n_1-05-2021_br {
+  left: 135px;
+  top: 72px;
+  position: absolute;
+  overflow: visible;
+  width: 67px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgba(119,119,119,1);
+}
+#Rectangle_32_bs {
+  fill: rgba(2,0,97,1);
+}
+.Rectangle_32_bs {
+  position: absolute;
+  overflow: visible;
+  width: 139px;
+  height: 41px;
+  left: 124px;
+  top: 627px;
+}
+#Add_New {
+  left: 144px;
+  top: 636px;
+  position: absolute;
+  overflow: visible;
+  width: 71px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  color: rgba(255,255,255,1);
+}
+#Ellipse_6 {
+  fill: rgba(255,255,255,1);
+}
+.Ellipse_6 {
+  position: absolute;
+  overflow: visible;
+  width: 41px;
+  height: 41px;
+  left: 222px;
+  top: 627px;
+}
+#plus {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  left: 231px;
+  top: 636px;
+  overflow: visible;
+  --web-animation: fadein 0.3s ease-out;
+  --web-action-type: page;
+  --web-action-target: Add_New_Work.html;
+  cursor: pointer;
+}

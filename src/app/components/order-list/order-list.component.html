@@ -1,0 +1,103 @@
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Order List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let tutorial of orders; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveOrder(tutorial, i)"
+
+
+        style="
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+          margin-bottom: 10px;  "
+
+
+
+      >
+      <div class="con" ></div>
+      <b>  {{ tutorial.user }}</b>  {{tutorial.key}}
+      <br>
+      {{tutorial.title}}
+      </li>
+    </ul>
+    <button class="m-3 btn btn-sm btn-danger" >
+      Remove All
+    </button>
+  </div>
+
+  <div class="col-md-6">
+    <div *ngIf="currentOrder">
+
+     <app-order-details
+        (refreshList)="refreshList()"
+        [order]="currentOrder"
+      ></app-order-details>
+
+    </div>
+
+
+
+    <div *ngIf="!currentOrder">
+      <br />
+      <p>Please click on a Order...</p>
+    </div>
+  </div>
+
+  <!-- <div class="form-group">
+    <label for="title">Title</label>
+    <select  #mySelect (change)='onOptionsSelected(mySelect.value)' class="form-control" id="title" name="title" >
+      <option value="painting">Painting</option>
+      <option value="plumbing">Plumbing</option>
+      <option value="Electricians">Electricians</option>
+      <option value="HandAc">Heater and AC</option>
+      <option value="flooring">Flooring</option>
+      <option value="other">other</option>
+    </select>
+  </div>
+  <br>
+  <div>
+
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let tutorial of filterOrder; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveOrder(tutorial, i)"
+      >
+        <b>  {{ tutorial.user }}</b> - {{tutorial.title}}
+      </li>
+    </ul>
+  </div>
+
+
+  <hr>
+  <br> -->
+
+<!--
+  <div id="Group_19">
+		<svg class="Rectangle_31">
+			<rect id="Rectangle_31" rx="11" ry="11" x="0" y="0" width="345" height="93">
+			</rect>
+		</svg>
+		<div id="n_0_window_repairing_work_">
+			<span>50 window repairing work </span>
+		</div>
+		<div id="Window_Repairing">
+			<span>Window Repairing</span>
+		</div>
+		<img id="quality-light--construction-wo" src="image/construction-wo.png" srcset="image/construction-wo.png 1x, image/construction-wo@2x.png 2x">
+
+		<div id="Nivon_Company_IT_Park_Goa">
+			<span>Nivon Company ,IT Park, Goa</span>
+		</div>
+		<div id="n_1-05-2021">
+			<span>11-05-2021</span>
+		</div>
+	</div>
+
+   -->
+
+</div>

@@ -1,0 +1,150 @@
+<div *ngIf="currentOrder" class="edit-form">
+  <h4>Order</h4>
+  <form>
+
+    <b>
+      <!-- https://www.bezkoder.com/angular-11-firebase-crud/ -->
+
+    </b>
+    <hr>
+    <!-- https://www.geeksforgeeks.org/amazon-interview-experience-for-sde-1-14/ -->
+    <div class="form-group">
+
+      <label for="OrderId">Order Id</label>
+      <input
+        type="text"
+        class="form-control"
+        id="orderid"
+        [(ngModel)]="currentOrder.key"
+        name="orderid"
+      />
+    </div>
+    <div class="form-group">
+
+      <label for="title">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="currentOrder.title"
+        name="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        [(ngModel)]="currentOrder.description"
+        name="description"
+      />
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        [(ngModel)]="currentOrder.address"
+        name="address"
+      />
+    </div>
+    <div class="form-group">
+      <label for="zip">Zip</label>
+      <input
+        type="text"
+        class="form-control"
+        id="zip"
+        [(ngModel)]="currentOrder.zip"
+        name="zip"
+      />
+    </div>
+    <div *ngIf=currentOrder.phone>
+      <div class="form-group">
+        <label for="Phone">Phone:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phone"
+          [(ngModel)]="currentOrder.phone"
+          name="phone"
+        />
+      </div>
+
+    </div>
+
+
+
+
+    <div class="form-group" [style.display]="(currentOrder.datetime==null)? 'none' : 'block' ">
+      <label for="LastUpdate">Last Update</label>
+      <input
+        type="text"
+        class="form-control"
+        id="LastUpdate"
+        [(ngModel)]="currentOrder.datetime"
+        name="LastUpdate"
+      />
+    </div>
+
+    <div class="form-group">
+      <label><strong>Progress:</strong></label>
+
+      <!-- {{ currentOrder.published ? "Published" : "Pending" }} -->
+      <div class="progress" style="height: 40px;">
+        <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">15%</div>
+      </div>
+
+    </div>
+
+    <!--
+      Start
+    -->
+
+    <!--
+End
+    -->
+
+    <div *ngIf=currentOrder.url>
+    <div class="form-group">
+      <label for="img">Sample Image:</label>
+      <img src={{currentOrder.url}}  class="img-thumbnail" alt="Norway" style="width: 200px;">
+    </div>
+  </div>
+
+
+    <br>
+
+
+
+  </form>
+
+  <!-- <button
+    class="badge badge-primary mr-2"
+    *ngIf="currentTutorial.published"
+    (click)="updatePublished(false)"
+  >
+    UnPublish
+  </button>
+  <button
+    *ngIf="!currentTutorial.published"
+    class="badge badge-primary mr-2"
+    (click)="updatePublished(true)"
+  >
+  Publish
+</button>-->
+
+
+
+<button type="submit" class=" btn btn-success" (click)="updateOrder()">
+  Update
+</button>
+<p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentOrder">
+<br />
+<p>Cannot access this Tutorial...</p>
+</div>
+

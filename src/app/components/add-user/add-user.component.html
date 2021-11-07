@@ -1,0 +1,98 @@
+<div class="submit-form">
+  <h2 class="text-center">Add New User</h2>
+
+  <div *ngIf="!submitted">
+  <div class="form-group">
+    <label for="user">User</label>
+    <input
+    type="text"
+      class="form-control"
+      id="user"
+      required
+      name="user"
+      value="User1"
+
+      [(ngModel)]="user.user"
+    />
+  </div>
+
+  <div class="border border-secondary" style="padding: 10px; border-width: 0.5px; border-style: dotted;">
+    <div class=" container">
+      <div class="row">
+
+
+    <div class="form-group col-4" style="padding-left: 0px; margin-left: 0px;">
+      <label for="houseNo">House No:</label>
+      <input type="text" class=" form-control " id="houseNo" required name="houseNo" placeholder="House No." [(ngModel)]="user.houseno">
+    </div>
+
+    <div class="form-group col-8" style="padding-right: 0px; margin-right: 0px;">
+      <label for="street">Street:</label>
+      <input type="text" class=" form-control " id="street" required name="street" placeholder="Street" [(ngModel)]="user.street" >
+    </div>
+
+  </div>
+  </div>
+
+  <div class=" container">
+    <div class="row">
+
+
+  <div class="form-group col-6" style="padding-left: 0px; margin-left: 0px;">
+    <label for="city">City:</label>
+    <input type="text" class=" form-control " id="city" required name="city" placeholder="City" [(ngModel)]="user.city">
+  </div>
+
+  <div class="form-group col-6" style="padding-right: 0px; margin-right: 0px;">
+    <label for="State">State:</label>
+    <input type="text" class=" form-control " id="State" required name="State" placeholder="State" [(ngModel)]="user.state" >
+  </div>
+
+</div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="form-group col-6" style="padding-left: 0px;">
+      <label for="zip">Zip Code:</label>
+      <input
+      type="text"
+        class="form-control"
+        id="zip"
+        required
+        name="zip"
+        placeholder="Zip Code"
+        [(ngModel)]="user.zip"
+      />
+    </div>
+
+    <div class="form-group col-6" >
+      <label for="phone">Phone Number:</label>
+      <input
+      type="text"
+        class="form-control"
+        id="phone"
+        required
+        name="phone"
+        placeholder="Phone No With Country Code (+1)"
+        [(ngModel)]="user.phone"
+      />
+
+    </div>
+
+
+  </div>
+</div>
+<button (click)="saveUser()" class="btn btn-success">Add Address</button>
+<button  (click)="onClear()" class="btn btn-secondary" style="margin: 20px;">Clear</button>
+
+
+
+</div>
+</div>
+<div *ngIf="submitted">
+  <h4>You Address is Save successfully!</h4>
+  <button class="btn btn-success" (click)="newUser()">Save New Address</button>
+</div>
+</div>

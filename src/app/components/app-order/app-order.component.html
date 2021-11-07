@@ -1,0 +1,218 @@
+
+<div class="submit-form">
+  <h2 class="text-center">Add New Work</h2>
+  <div *ngIf="!submitted">
+    <div *ngIf="!otherOrder">
+      <app-user-list (newItem)="getAddress($event)">
+
+      </app-user-list>
+
+      <!-- <div class="form-group">
+        <label for="user">User</label>
+        <input
+        type="text"
+          class="form-control"
+          id="user"
+          required
+          [(ngModel)]="order.user"
+          name="user"
+          value="User1"
+          readonly
+        />
+      </div> -->
+
+
+
+
+    <div class="form-group">
+      <label for="title">Work Type</label>
+      <select class="form-control" id="title" name="title" #select [(ngModel)]="order.title" (change)="onOptionsSelected(select.value)" placeholder="Work Type" >
+
+        <option value="03_Concrete">Concrete</option>
+        <option value="04_Masonry, Stucco, EIFS">Masonry, Stucco, EIFS</option>
+        <option value="05_Metal, Railings">Metal, Railings</option>
+        <option value="06_Framing">Framing</option>
+        <option value="06_Cabinets & Countertops">Cabinets & Countertops</option>
+        <option value="07_Roofing">Roofing</option>
+        <option value="08_Doors  Windows">Doors & Windows</option>
+        <option value="09_Drywall, Painting, Wall Paper">Drywall, Painting, Wall Paper</option>
+        <option value="09_Flooring">FlooringHeater and AC</option>
+        <option value="21_Fire Suppression Sprinklers">Fire Suppression (Sprinklers)</option>
+        <option value="22_Plumbing">Plumbing</option>
+        <option value="23_AC & Heating">AC and Heating</option>
+        <option value="26_Electrical">Electrical</option>
+        <option value="28_Electronics Safety Security">Electronics, Safety, & Security</option>
+
+
+
+        <option value="32_Landscping Yard Work Sprinklers">Landscping, Yard Work, Sprinklers</option>
+        <option value="other">other</option>
+      </select>
+
+
+      <!-- <input
+        type="text"
+        class="form-control"
+        id="title"
+        required
+        [(ngModel)]="order.title"
+        name="title"
+      /> -->
+    </div>
+
+    </div>
+    <div class="form-group">
+      <div *ngIf="otherOrder">
+        <label for="orderTi">Other Type:</label>
+        <input class="form-control" type="text" name="title" id="title"  [(ngModel)]="order.title" (click)="onOrderTypeOther()" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Work Description</label>
+
+      <textarea
+        class="form-control"
+        id="description"
+        required
+        placeholder="Work Description"
+        [(ngModel)]="order.description"
+        name="description"
+      ></textarea>
+
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="img">Select Image:</label>
+      <input type="file"
+      id="file"
+      name="file"
+      #userPhoto
+      onclick="this.value=null"
+      (change)="selectFile($event)"
+      >
+    </div> -->
+
+
+    Address:
+    <div class="border border-secondary" style="padding: 10px; border-width: 0.5px; border-style: dotted;">
+    <div class=" container">
+      <div class="row">
+
+
+    <div class="form-group col-4" style="padding-left: 0px; margin-left: 0px;">
+      <label for="houseNo">House No</label>
+      <input type="text" class="form-control"
+       id="houseNo"
+      required
+       name="houseNo"
+       placeholder="House No"
+       [(ngModel)]="userAddres.houseno" >
+    </div>
+    <div class="form-group col-8" style="padding-right: 0px; margin-right: 0px;">
+      <label for="street">Street</label>
+      <input type="text" class=" form-control "
+      id="street" required
+      name="street"
+      placeholder="Street"
+      [(ngModel)]="userAddres.street" >
+    </div>
+
+  </div>
+  </div>
+
+  <div class=" container">
+    <div class="row">
+
+
+  <div class="form-group col-6" style="padding-left: 0px; margin-left: 0px;">
+    <label for="city">City:</label>
+    <input type="text" class=" form-control " id="city" required name="city" placeholder="City" [(ngModel)]="userAddres.city">
+  </div>
+
+  <div class="form-group col-6" style="padding-right: 0px; margin-right: 0px;">
+    <label for="State">State:</label>
+    <input type="text" class=" form-control " id="State" required name="State" placeholder="State" [(ngModel)]="userAddres.state" >
+  </div>
+
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="form-group col-6" style="padding-left: 0px;">
+      <label for="zip">Zip Code</label>
+      <input
+      type="text"
+        class="form-control"
+        id="zip"
+        required
+        name="zip"
+        placeholder="Zip Code"
+        [(ngModel)]="userAddres.zip"
+      />
+    </div>
+
+    <div class="form-group col-6" style="padding-right: 0px; margin-right: 0px;">
+      <label for="phone">Phone Number:</label>
+      <input
+      type="text"
+        class="form-control"
+        id="phone"
+        required
+        name="phone"
+        placeholder="Phone No With Country Code (+1)"
+        [(ngModel)]="userAddres.phone"
+      />
+
+    </div>
+
+
+  </div>
+</div>
+
+</div>
+
+
+    <button (click)="saveOrder()" class="btn btn-success">Submit</button>
+    <button (click)="onClear()" class="btn btn-secondary" style="margin: 20px;">Clear</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!  </h4>
+    <b>{{ orderKey }}</b>
+
+
+
+    <div class="form-group">
+      <div class="custom-file">
+        <input type="file"
+        class="custom-file-input"
+        id="file"
+        name="file"
+        #userPhoto
+        onclick="this.value=null"
+        (change)="selectFile($event)"
+        >
+        <label for="" class="custom-file-label"> Choose Image</label>
+
+      </div>
+
+    </div>
+
+    <div *ngIf=fb>
+      <img src={{fb}}  class="img-thumbnail" alt="Order" style="width: 200px;">
+      <div class="form-group">
+
+        <button type="button" class="btn btn-danger" (click)="deleteImg()">Delete Image</button>
+      </div>
+
+    </div>
+
+
+
+    <br>
+
+
+    <button class="btn btn-success" (click)="newOrder()">Add</button>
+  </div>
+</div>

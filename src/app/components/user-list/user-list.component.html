@@ -1,0 +1,7 @@
+<div class="form-group">
+  <label for="user">User</label>
+  <select class="form-control" name="user" id="user" [(ngModel)]="selectedVal"
+   (change)="sendMessg()">
+    <option *ngFor="let userL of users; let i=index" [ngValue]=userL >{{userL.user}}</option>
+  </select>
+</div>

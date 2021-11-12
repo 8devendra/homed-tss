@@ -11,6 +11,7 @@ export class OrderModel {
   file_name?: string;
   url?: string;
   file?: File;
+  visitCharge?:string;
   // constructor(file: File) {
   //   this.file = file;
   // }

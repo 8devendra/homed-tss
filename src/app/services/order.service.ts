@@ -30,24 +30,11 @@ added to storage
 
 
    create(order:OrderModel):any{
-
-    //For Img Uplode
-
-
-
-    //End Img Uplode
-
-
-     order.datetime=new Date().toLocaleDateString() +" "+ new Date().toLocaleTimeString();
-
-
-
-
+     order.datetime=new Date().toLocaleDateString() +" "+ new Date().toLocaleTimeString()
      return this.orderRef.push(order);
    }
 
    update(key:string, value:any):Promise<void>{
-
      return this.orderRef.update(key,value);
    }
 

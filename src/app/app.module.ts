@@ -6,6 +6,8 @@ import {AngularFireModule } from '@angular/fire/compat';
 import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
 import {FormsModule} from '@angular/forms';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -20,6 +22,9 @@ import { initializeApp } from '@firebase/app';
 import { environment } from 'src/environments/environment';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { UserOrderComponent } from './components/user-order/user-order.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,14 +34,16 @@ import { UserListComponent } from './components/user-list/user-list.component';
     OrderDetailsComponent,
     OrderListComponent,
     AddUserComponent,
-    UserListComponent
+    UserListComponent,
+    UserOrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

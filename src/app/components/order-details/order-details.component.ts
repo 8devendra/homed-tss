@@ -1,7 +1,10 @@
 import { Component, OnInit, OnChanges,EventEmitter, Input } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 import { OrderModel } from 'src/app/model/order-model.model';
 import { OrderService } from 'src/app/services/order.service';
+
 
 @Component({
   selector: 'app-order-details',
@@ -10,23 +13,45 @@ import { OrderService } from 'src/app/services/order.service';
 })
 export class OrderDetailsComponent implements OnInit {
 
+  imgLoading:boolean=true;
+  curtOrdereDate:string="";
+  routeName?:any;
+  userAuth?:string;
+  admin?:boolean;
+
   @Input()order?:OrderModel;
   @Input()refreshList: EventEmitter<any>=new EventEmitter();
 
   currentOrder:OrderModel={
-    title:'',
+     title:'',
      description:'',
 
   }
   message='';
-  constructor(private orderSer:OrderService) { }
+  constructor(private orderSer:OrderService,private router: Router) { }
 
   ngOnInit(): void {
     this.message='INIT';
+    if(this.router.url==='/orders'){
+      this.userAuth='admin';
+      this.admin=true;
+    }else{
+      this.userAuth='user';
+      this.admin=false;
+    }
+  }
+
+  onLoadImg(){
+    this.imgLoading=false;
+  }
+  onErrorImg(){
+    this.imgLoading=false;
   }
 
   ngOnChanges():void{
     this.message='';
+    this.imgLoading=true;
+
     this.currentOrder={ ...this.order};
   }
 
@@ -35,8 +60,9 @@ export class OrderDetailsComponent implements OnInit {
 
 
     const data={
-      title:this.currentOrder.title,
-      description:this.currentOrder.description,
+     // title:this.currentOrder.title,
+     // description:this.currentOrder.description,
+      visitCharge:this.currentOrder.visitCharge,
       datetime:today
     };
 
@@ -46,11 +72,4 @@ export class OrderDetailsComponent implements OnInit {
       .catch(err=>console.log(err));
     }
   }
-
-
-
-
-
-
-
 }

@@ -1,0 +1,43 @@
+<div class="container">
+
+
+<app-user-list (newItem)="getUser($event)">
+
+</app-user-list>
+<h4>Order List : {{selectedUser}}</h4>
+<div class="list row">
+
+  <br>
+  <div class="col-md-6">
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let tutorial of orders; let i = index"
+      [class.active]="i == currentIndex"
+      style="
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        margin-bottom: 10px;  "
+      (click)="setActiveOrder(tutorial, i)"
+    >
+    <div class="con" ></div>
+    <b>  {{ tutorial.user }}</b>  {{tutorial.key}}
+    <br>
+    {{tutorial.title}}
+    </li>
+  </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentOrder">
+      <app-order-details
+         (refreshList)="refreshList()"
+         [order]="currentOrder"
+       ></app-order-details>
+
+     </div>
+  </div>
+
+
+
+</div>
+</div>

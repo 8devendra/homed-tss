@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { OrderModel } from 'src/app/model/order-model.model';
 import { UserModel } from 'src/app/model/user-model';
 import { OrderService } from 'src/app/services/order.service';
+
 
 import {AngularFireStorage } from '@angular/fire/compat/storage';
 import { finalize } from 'rxjs/operators';
@@ -22,14 +24,42 @@ export class AppOrderComponent implements OnInit {
   orderKey:string="";
   downloadURL: Observable<string> | undefined;
   fb;
+  closeResult: string = '';
+  imgLoading:boolean=false;
 
-  constructor(private orderServ:OrderService,private storage:AngularFireStorage) { }
+  constructor(private orderServ:OrderService,private storage:AngularFireStorage,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     //this.order.user="User1";
+
   }
 
+
+
+  //// For Pop Up --Start
+  open(content:any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
+  //// For Pop Up --END
+
   selectFile(event){
+    this.imgLoading=true;
+    console.log('Added');
 
     var n=this.orderKey;//Date.now();
     const file=event.target.files[0];
@@ -55,6 +85,8 @@ export class AppOrderComponent implements OnInit {
 
           }
           console.log(this.fb);
+          this.imgLoading=false;
+          console.log('Donw1');
         });
       })
     ).subscribe(url=>{
@@ -65,6 +97,7 @@ export class AppOrderComponent implements OnInit {
 
     //delete File
     //
+
 
 
   }
@@ -84,9 +117,6 @@ export class AppOrderComponent implements OnInit {
 
 
   saveOrder():void{
-
-
-
     console.log("Created"+this.order);
     if(this.userAddres!=null){
     this.order.user=this.userAddres.user;
@@ -118,14 +148,12 @@ export class AppOrderComponent implements OnInit {
 
   onOrderTypeOther():void{
     this.order.title="";
-
   }
 
   onClear():void{
     this.otherOrder=false;
     this.order.title="";
     this.order.description="";
-
   }
 
   getAddress(newAddreess:UserModel){

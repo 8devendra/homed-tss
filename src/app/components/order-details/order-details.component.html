@@ -6,6 +6,7 @@
       <!-- https://www.bezkoder.com/angular-11-firebase-crud/ -->
 
     </b>
+
     <hr>
     <!-- https://www.geeksforgeeks.org/amazon-interview-experience-for-sde-1-14/ -->
     <div class="form-group">
@@ -16,7 +17,7 @@
         class="form-control"
         id="orderid"
         [(ngModel)]="currentOrder.key"
-        name="orderid"
+        name="orderid" readonly
       />
     </div>
     <div class="form-group">
@@ -27,28 +28,30 @@
         class="form-control"
         id="title"
         [(ngModel)]="currentOrder.title"
-        name="title"
+        name="title" readonly
       />
     </div>
     <div class="form-group">
       <label for="description">Description</label>
-      <input
+
+      <textarea
         type="text"
         class="form-control"
         id="description"
         [(ngModel)]="currentOrder.description"
-        name="description"
-      />
+        name="description" readonly
+      >
+    </textarea>
     </div>
     <div class="form-group">
       <label for="address">Address</label>
-      <input
+      <textarea
         type="text"
         class="form-control"
         id="address"
         [(ngModel)]="currentOrder.address"
-        name="address"
-      />
+        name="address" readonly
+      ></textarea>
     </div>
     <div class="form-group">
       <label for="zip">Zip</label>
@@ -57,7 +60,7 @@
         class="form-control"
         id="zip"
         [(ngModel)]="currentOrder.zip"
-        name="zip"
+        name="zip" readonly
       />
     </div>
     <div *ngIf=currentOrder.phone>
@@ -68,7 +71,7 @@
           class="form-control"
           id="phone"
           [(ngModel)]="currentOrder.phone"
-          name="phone"
+          name="phone" readonly
         />
       </div>
 
@@ -84,9 +87,36 @@
         class="form-control"
         id="LastUpdate"
         [(ngModel)]="currentOrder.datetime"
-        name="LastUpdate"
+        name="LastUpdate" readonly
       />
     </div>
+
+    <div *ngIf="admin" class="form-group" >
+      <label for="visit">Visit Charges</label>
+      <input type="text"
+      class="form-control"
+      id="visit"
+      name="visit"
+      [(ngModel)]="currentOrder.visitCharge"
+
+      >
+
+    </div>
+    <div *ngIf="!admin && currentOrder.visitCharge!=null" class="form-group" >
+      <label for="visit">Visit Charges: (It will be deducted from end bill)</label>
+      <input type="text"
+      class="form-control"
+      id="visit"
+      name="visit"
+      [(ngModel)]="currentOrder.visitCharge"
+      readonly
+      >
+
+    </div>
+
+
+
+
 
     <div class="form-group">
       <label><strong>Progress:</strong></label>
@@ -109,7 +139,18 @@ End
     <div *ngIf=currentOrder.url>
     <div class="form-group">
       <label for="img">Sample Image:</label>
-      <img src={{currentOrder.url}}  class="img-thumbnail" alt="Norway" style="width: 200px;">
+      <img src={{currentOrder.url}} (load)="onLoadImg()" (error)="onErrorImg()" class="img-thumbnail" alt="Norway" style="width: 200px;">
+
+
+
+        <div *ngIf="imgLoading">
+          <div class="spinner-grow text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+
+
     </div>
   </div>
 
@@ -118,7 +159,13 @@ End
 
 
 
+
   </form>
+
+    <button *ngIf="admin" type="submit" class=" btn btn-success" (click)="updateOrder()">
+      Update
+    </button>
+
 
   <!-- <button
     class="badge badge-primary mr-2"
@@ -137,9 +184,10 @@ End
 
 
 
-<button type="submit" class=" btn btn-success" (click)="updateOrder()">
-  Update
-</button>
+
+
+
+
 <p>{{ message }}</p>
 </div>
 

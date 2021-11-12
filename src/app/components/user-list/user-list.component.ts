@@ -11,7 +11,6 @@ import { OrderModel } from 'src/app/model/order-model.model';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-
   users?:UserModel[];
   filterUser?:UserModel[];
   currentUser?:UserModel;
@@ -28,9 +27,10 @@ export class UserListComponent implements OnInit {
     this.retriveUser();
 
   }
+
   sendMessg(){
     //this.currentUser=event.target.value;
-    console.log(this.selectedVal);
+    //console.log(this.selectedVal);
     this.newItem.emit(this.selectedVal);
   }
 
@@ -47,7 +47,4 @@ export class UserListComponent implements OnInit {
         });
 
   }
-
-
-
 }

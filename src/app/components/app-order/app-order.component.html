@@ -175,6 +175,7 @@
 
     <button (click)="saveOrder()" class="btn btn-success">Submit</button>
     <button (click)="onClear()" class="btn btn-secondary" style="margin: 20px;">Clear</button>
+
   </div>
 
   <div *ngIf="submitted">
@@ -196,17 +197,58 @@
         <label for="" class="custom-file-label"> Choose Image</label>
 
       </div>
-
     </div>
+    <div class="form-group">
+      <div *ngIf="imgLoading">
+        <div class="spinner-grow text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
 
     <div *ngIf=fb>
-      <img src={{fb}}  class="img-thumbnail" alt="Order" style="width: 200px;">
-      <div class="form-group">
 
-        <button type="button" class="btn btn-danger" (click)="deleteImg()">Delete Image</button>
-      </div>
+      <button class="btn btn-lg btn-outline-primary" (click)="open(popup)" >View Image</button>
+<!--
+POP Up Start
 
+-->
+
+<ng-template #popup let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Order Photo</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <img src={{fb}}  class="img-thumbnail" alt="Order" style="width: 200px;">
+
+  </div>
+  <div class="modal-footer">
+    <div class="form-group">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+    <button type="button" class="btn btn-danger" (click)="deleteImg()">Delete Image</button>
     </div>
+  </div>
+</ng-template>
+
+
+<!--
+
+POP Up END
+-->
+
+ </div>
 
 
 

@@ -30,7 +30,7 @@ export class UserOrderComponent implements OnInit {
           )
         )
     ).subscribe(data=>{
-      this.orders=data.filter(o=>o.user===this.selectedUser);
+      this.orders=data.filter(o=>o.user===this.selectedUser).reverse();
     });
   }
 

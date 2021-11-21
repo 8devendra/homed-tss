@@ -10,7 +10,7 @@
       id="user"
       required
       name="user"
-      value="User1"
+      placeholder="Enter User Name"
 
       [(ngModel)]="user.user"
     />
@@ -19,7 +19,6 @@
   <div class="border border-secondary" style="padding: 10px; border-width: 0.5px; border-style: dotted;">
     <div class=" container">
       <div class="row">
-
 
     <div class="form-group col-4" style="padding-left: 0px; margin-left: 0px;">
       <label for="houseNo">House No:</label>
@@ -117,7 +116,7 @@ POP Up END
 </div>
 </div>
 <div *ngIf="submitted">
-  <h4>You Address is Save successfully!</h4>
-  <button class="btn btn-success" (click)="newUser()">Save New Address</button>
+  <h4>Your Address Save successfully!</h4>
+  <button class="btn btn-success" (click)="newUser()">Create New Account</button>
 </div>
 </div>

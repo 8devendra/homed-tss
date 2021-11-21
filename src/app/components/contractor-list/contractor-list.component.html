@@ -1,0 +1,40 @@
+<div class="list row">
+  <div class="col-md-6">
+    <h4>contractors List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let tutorial of contractors; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveConstructor(tutorial,i)"
+        style="
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+          margin-bottom: 10px;  ">
+      <div class="con" ></div>
+      <b>  {{ tutorial.name }}</b>  {{tutorial.key}}
+      <br>
+      {{tutorial.phone}}
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="col-md-6">
+    <div *ngIf="currentContractor">
+
+     <app-contractor-details
+        (refreshList)="refreshList()"
+        [order]="currentContractor"
+      ></app-contractor-details>
+
+    </div>
+
+
+
+    <div *ngIf="!currentContractor">
+      <br />
+      <p>Please click on a Contractor...</p>
+    </div>
+  </div>
+  </div>

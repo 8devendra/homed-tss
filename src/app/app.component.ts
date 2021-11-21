@@ -11,10 +11,15 @@ import { OrderModel } from './model/order-model.model';
 })
 export class AppComponent {
   title = 'fire-db';
+  navbarOpen=false;
 
   items:Observable<any[]>;
   constructor(db:AngularFireDatabase){
 
     this.items=db.list('orders').valueChanges();
+  }
+
+  toggleNavbar(){
+    this.navbarOpen=!this.navbarOpen;
   }
 }

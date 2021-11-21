@@ -23,6 +23,9 @@ import { environment } from 'src/environments/environment';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserOrderComponent } from './components/user-order/user-order.component';
+import { AddContractorComponent } from './components/add-contractor/add-contractor.component';
+import { ContractorListComponent } from './components/contractor-list/contractor-list.component';
+import { ContractorDetailsComponent } from './components/contractor-details/contractor-details.component';
 
 
 
@@ -35,7 +38,10 @@ import { UserOrderComponent } from './components/user-order/user-order.component
     OrderListComponent,
     AddUserComponent,
     UserListComponent,
-    UserOrderComponent
+    UserOrderComponent,
+    AddContractorComponent,
+    ContractorListComponent,
+    ContractorDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -34,7 +34,7 @@ export class OrderListComponent implements OnInit {
           )
         )
     ).subscribe(data=>{
-      this.orders=data;
+      this.orders=data.reverse();
       this.filterOrder=data.filter(o=>o.user==="User1");
 
     });

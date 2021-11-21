@@ -18,7 +18,7 @@ export class AddUserComponent implements OnInit {
 
 
   constructor(private userSer:UserService,private modalService: NgbModal) {
-    this.user.user="User1";
+    //this.user.user="User1";
   }
 
   ngOnInit(): void {
